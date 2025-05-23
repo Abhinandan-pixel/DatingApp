@@ -14,5 +14,6 @@ namespace API.Data
         }
 
         public DbSet<AppUser> Users { get; set; } //Our table name will be Users because we are creating table from code first
+        
     }
 }

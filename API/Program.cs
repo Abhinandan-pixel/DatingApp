@@ -1,5 +1,7 @@
+using API.Data;
 using API.extensions;
 using API.Middleware;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args); //creates webapp instance
 
@@ -16,6 +18,20 @@ app.UseAuthentication(); //adds authentication middleware to the pipeline
 app.UseAuthorization(); //adds authorization middleware to the pipeline
 
 app.MapControllers(); //maps the controllers to the app
+
+using var scope = app.Services.CreateScope(); //This is going to give us access to the services in the container 
+var services = scope.ServiceProvider;
+try
+{
+    var context = services.GetRequiredService<DataContext>();
+    await context.Database.MigrateAsync(); //migrates the database to the latest version
+    await Seed.SeedUsers(context); //seeds the database with initial data
+}
+catch (Exception ex)
+{
+    var logger = services.GetRequiredService<ILogger<Program>>();
+    logger.LogError(ex, "An error occurred during migration");
+}
 
 app.Run();
 

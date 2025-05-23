@@ -1,0 +1,97 @@
+[
+  {
+    "UserName": "jdoe123",
+    "Gender": "Male",
+    "DateOfBirth": "1990-05-15",
+    "KnownAs": "John",
+    "Created": "2025-01-01T10:00:00Z",
+    "LastActive": "2025-05-20T18:30:00Z",
+    "Introduction": "Hi, I'm John. I love exploring the outdoors and trying new cuisines.",
+    "LookingFor": "Friendship and travel buddies.",
+    "Interests": "Hiking, Cooking, Photography",
+    "City": "Denver",
+    "Country": "USA",
+    "Photos": [
+      {
+        "Url": "https://example.com/photos/jdoe123/main.jpg",
+        "IsMain": true
+      }
+    ]
+  },
+  {
+    "UserName": "sunny_sam",
+    "Gender": "Female",
+    "DateOfBirth": "1988-11-22",
+    "KnownAs": "Sam",
+    "Created": "2025-02-10T09:15:00Z",
+    "LastActive": "2025-05-21T12:00:00Z",
+    "Introduction": "Easygoing, fun, and love dogs.",
+    "LookingFor": "Meaningful relationship.",
+    "Interests": "Reading, Dogs, Art galleries",
+    "City": "Austin",
+    "Country": "USA",
+    "Photos": [
+      {
+        "Url": "https://example.com/photos/sunny_sam/profile.jpg",
+        "IsMain": true
+      }
+    ]
+  },
+  {
+    "UserName": "mountain_mike",
+    "Gender": "Male",
+    "DateOfBirth": "1985-09-30",
+    "KnownAs": "Mike",
+    "Created": "2025-03-05T11:20:00Z",
+    "LastActive": "2025-05-19T07:45:00Z",
+    "Introduction": "Engineer by day, rock climber by weekend.",
+    "LookingFor": "Someone who loves adventure.",
+    "Interests": "Climbing, Tech, Travel",
+    "City": "Vancouver",
+    "Country": "Canada",
+    "Photos": [
+      {
+        "Url": "https://example.com/photos/mountain_mike/1.jpg",
+        "IsMain": true
+      }
+    ]
+  },
+  {
+    "UserName": "artsy_amy",
+    "Gender": "Female",
+    "DateOfBirth": "1995-02-18",
+    "KnownAs": "Amy",
+    "Created": "2025-04-01T13:00:00Z",
+    "LastActive": "2025-05-22T09:00:00Z",
+    "Introduction": "Painter and poet. I see beauty in chaos.",
+    "LookingFor": "Inspiration and companionship.",
+    "Interests": "Painting, Poetry, Jazz",
+    "City": "Paris",
+    "Country": "France",
+    "Photos": [
+      {
+        "Url": "https://example.com/photos/artsy_amy/main.jpg",
+        "IsMain": true
+      }
+    ]
+  },
+  {
+    "UserName": "techy_tom",
+    "Gender": "Male",
+    "DateOfBirth": "1992-07-09",
+    "KnownAs": "Tom",
+    "Created": "2025-01-15T08:30:00Z",
+    "LastActive": "2025-05-18T16:10:00Z",
+    "Introduction": "Full-stack developer who loves sci-fi and gaming.",
+    "LookingFor": "Someone to build a future with.",
+    "Interests": "Gaming, Coding, Sci-fi movies",
+    "City": "Berlin",
+    "Country": "Germany",
+    "Photos": [
+      {
+        "Url": "https://example.com/photos/techy_tom/avatar.jpg",
+        "IsMain": true
+      }
+    ]
+  }
+]
