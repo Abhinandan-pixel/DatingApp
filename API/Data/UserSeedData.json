@@ -13,7 +13,7 @@
     "Country": "USA",
     "Photos": [
       {
-        "Url": "https://example.com/photos/jdoe123/main.jpg",
+        "Url": "https://deadline.com/wp-content/uploads/2023/06/Futurama.jpg?w=681&h=383&crop=1",
         "IsMain": true
       }
     ]
@@ -32,7 +32,7 @@
     "Country": "USA",
     "Photos": [
       {
-        "Url": "https://example.com/photos/sunny_sam/profile.jpg",
+        "Url": "https://www.wallpaperflare.com/static/684/591/741/futurama-turanga-leela-purple-haired-wallpaper.jpg",
         "IsMain": true
       }
     ]
@@ -51,7 +51,7 @@
     "Country": "Canada",
     "Photos": [
       {
-        "Url": "https://example.com/photos/mountain_mike/1.jpg",
+        "Url": "https://images.immediate.co.uk/production/volatile/sites/3/2023/10/rick-and-morty-season-7-8c59656.jpg?quality=90&webp=true&resize=1500,1001",
         "IsMain": true
       }
     ]
@@ -70,7 +70,7 @@
     "Country": "France",
     "Photos": [
       {
-        "Url": "https://example.com/photos/artsy_amy/main.jpg",
+        "Url": "https://m.media-amazon.com/images/M/MV5BNjcwY2E0YzQtODkxOS00ZmM1LWFlNTAtZDgwNmNiZmJmMTkyXkEyXkFqcGdeQWFybm8@._V1_.jpg",
         "IsMain": true
       }
     ]
@@ -89,7 +89,7 @@
     "Country": "Germany",
     "Photos": [
       {
-        "Url": "https://example.com/photos/techy_tom/avatar.jpg",
+        "Url": "https://d2eehagpk5cl65.cloudfront.net/img/c800x450-w800-q80/uploads/2025/04/minis_invinsible-800x450.jpg",
         "IsMain": true
       }
     ]
