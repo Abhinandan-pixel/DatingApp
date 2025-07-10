@@ -51,6 +51,7 @@
                 </form>
             </tab>
             <tab heading="Edit Photos">
+                <app-photo-editor [member]="member" (photoUpdated)="updateMember()"></app-photo-editor>
             </tab>
         </tabset>
     </div>
