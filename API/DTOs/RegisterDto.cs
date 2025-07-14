@@ -6,8 +6,21 @@ namespace API.DTOs
     {
         [Required]
         public string UserName { get; set; }
+
         [Required]
         [StringLength(8, MinimumLength = 4)]
-        public string Password { get; set; } 
+        public string Password { get; set; }
+
+        [Required]
+        public string KnownAs { get; set; }
+
+        [Required]
+        public string City { get; set; }
+
+        [Required]
+        public string Country { get; set; }
+
+        [Required]
+        public DateOnly? DateOfBirth { get; set; } // optional to make required work!
     }
 }
