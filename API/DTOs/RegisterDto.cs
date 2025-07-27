@@ -14,6 +14,22 @@ namespace API.DTOs
         [Required]
         public string KnownAs { get; set; }
 
+        private string _gender;
+        [Required]
+        public string Gender
+        {
+            get => _gender;
+            set
+            {
+                if (string.Equals(value, "male", StringComparison.OrdinalIgnoreCase))
+                    _gender = "Male";
+                else if (string.Equals(value, "female", StringComparison.OrdinalIgnoreCase))
+                    _gender = "Female";
+                else
+                    _gender = value;
+            }
+        }
+
         [Required]
         public string City { get; set; }
 

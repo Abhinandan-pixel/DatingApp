@@ -48,6 +48,7 @@ export class MemberDetailComponent implements OnInit {
     if (username) {
       this.memberService.getMember(username).subscribe({
         next: member => {
+          console.log(member.lastActive);
           this.member = member
           this.galleryImages = this.getImages();
         }
