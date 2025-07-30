@@ -20,7 +20,9 @@ namespace API.Entities
         public List<Photo> Photos { get; set; } = new List<Photo>();
         public List<UserLike> LikedByUsers { get; set; } = new List<UserLike>();
         public List<UserLike> LikedUsers { get; set; } = new List<UserLike>();
-
+        public List<Message> MessagesSent { get; set; }
+        public List<Message> MessagesReceived { get; set; }
+ 
         // The method must be named GetAge so that AutoMapper can automatically use it
         // // when mapping AppUser to MemberDto for the Age property.
         // public int GetAge()
