@@ -93,5 +93,119 @@
         "IsMain": true
       }
     ]
+  },
+  {
+    "UserName": "rika_f",
+    "Gender": "Female",
+    "DateOfBirth": "2001-08-21",
+    "KnownAs": "Rika",
+    "Created": "2025-01-18T10:30:00Z",
+    "LastActive": "2025-07-30T14:45:00Z",
+    "Introduction": "Old soul in a young mind. I love mystery novels and festivals.",
+    "LookingFor": "Deep thinkers and calm energy.",
+    "Interests": "Folklore, Chess, Stargazing",
+    "City": "Nagano",
+    "Country": "Japan",
+    "Photos": [
+      {
+        "Url": "https://i.pinimg.com/474x/cf/d8/e5/cfd8e58e8ac8c89106935d599996a4e9.jpg",
+        "IsMain": true
+      }
+    ]
+  },
+  {
+    "UserName": "saya_takagi",
+    "Gender": "Female",
+    "DateOfBirth": "1999-04-09",
+    "KnownAs": "Saya",
+    "Created": "2025-02-22T11:00:00Z",
+    "LastActive": "2025-07-29T19:10:00Z",
+    "Introduction": "Brains over brawn — unless the world's ending.",
+    "LookingFor": "Someone with humor and logic.",
+    "Interests": "Tech gadgets, Debate, Survival shows",
+    "City": "Kobe",
+    "Country": "Japan",
+    "Photos": [
+      {
+        "Url": "https://media.tenor.com/sn208dFRZAMAAAAe/saya-takagi-highschool-of-the-dead.png",
+        "IsMain": true
+      }
+    ]
+  },
+  {
+    "UserName": "akari_moon",
+    "Gender": "Female",
+    "DateOfBirth": "1998-06-03",
+    "KnownAs": "Akari",
+    "Created": "2025-03-10T09:20:00Z",
+    "LastActive": "2025-07-27T13:35:00Z",
+    "Introduction": "Optimistic and dreamy. I love canals and sunsets.",
+    "LookingFor": "Gentle, curious souls.",
+    "Interests": "Boating, Journaling, Music",
+    "City": "Venice",
+    "Country": "Italy",
+    "Photos": [
+      {
+        "Url": "https://i.pinimg.com/736x/1c/ca/b5/1ccab51700cb399cb4ebd5a61b554c41.jpg",
+        "IsMain": true
+      }
+    ]
+  },
+  {
+    "UserName": "ginko_wanderer",
+    "Gender": "Male",
+    "DateOfBirth": "1988-11-02",
+    "KnownAs": "Ginko",
+    "Created": "2025-01-12T12:00:00Z",
+    "LastActive": "2025-07-30T21:00:00Z",
+    "Introduction": "Wandering healer and curious observer of the unknown.",
+    "LookingFor": "Someone peaceful and thoughtful.",
+    "Interests": "Nature, Traveling, Mysterious phenomena",
+    "City": "Aomori",
+    "Country": "Japan",
+    "Photos": [
+      {
+        "Url": "https://preview.redd.it/fyywmhd3frq61.jpg?auto=webp&s=18966b4c9edd6bf4679c9b1c7d0ab9a4d6e4bd37",
+        "IsMain": true
+      }
+    ]
+  },
+  {
+    "UserName": "oreki_energy_saver",
+    "Gender": "Male",
+    "DateOfBirth": "1998-01-27",
+    "KnownAs": "Houtarou",
+    "Created": "2025-02-03T15:00:00Z",
+    "LastActive": "2025-07-29T08:00:00Z",
+    "Introduction": "I don’t do more than I need to — unless it’s a mystery worth solving.",
+    "LookingFor": "Someone curious who can keep things interesting.",
+    "Interests": "Mystery novels, Napping, Minimalism",
+    "City": "Kyoto",
+    "Country": "Japan",
+    "Photos": [
+      {
+        "Url": "https://i.pinimg.com/236x/7f/a1/21/7fa12122d06f9d12528e9bc466c7ed39.jpg",
+        "IsMain": true
+      }
+    ]
+  },
+  {
+    "UserName": "shinra_firestep",
+    "Gender": "Male",
+    "DateOfBirth": "2000-05-09",
+    "KnownAs": "Shinra",
+    "Created": "2025-01-25T14:40:00Z",
+    "LastActive": "2025-07-31T09:00:00Z",
+    "Introduction": "Faster than fire. I’m all about doing the right thing — even if I smile at the wrong times.",
+    "LookingFor": "Someone passionate and a little weird.",
+    "Interests": "Firefighting, Running, Supernatural stories",
+    "City": "Tokyo",
+    "Country": "Japan",
+    "Photos": [
+      {
+        "Url": "https://images2.alphacoders.com/103/thumb-1920-1033425.png",
+        "IsMain": true
+      }
+    ]
   }
 ]
