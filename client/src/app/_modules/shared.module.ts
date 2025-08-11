@@ -11,7 +11,6 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { ModalModule, BsModalService } from 'ngx-bootstrap/modal';
 
-
 @NgModule({
   declarations: [],
   imports: [
@@ -23,7 +22,7 @@ import { ModalModule, BsModalService } from 'ngx-bootstrap/modal';
       preventDuplicates: true,
       closeButton: true,
       progressBar: true,
-      timeOut: 3000
+      timeOut: 3000,
     }),
     NgxGalleryModule,
     NgxSpinnerModule.forRoot({ type: 'line-scale-party' }),
@@ -31,7 +30,7 @@ import { ModalModule, BsModalService } from 'ngx-bootstrap/modal';
     BsDatepickerModule,
     PaginationModule.forRoot(),
     ButtonsModule.forRoot(),
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
   ],
   exports: [
     BsDropdownModule,
@@ -43,7 +42,7 @@ import { ModalModule, BsModalService } from 'ngx-bootstrap/modal';
     BsDatepickerModule,
     PaginationModule,
     ButtonsModule,
-    ModalModule
-  ]
+    ModalModule,
+  ],
 })
-export class SharedModule { }
+export class SharedModule {}

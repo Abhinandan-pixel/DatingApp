@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { MemberListComponent } from './members/member-list/member-list.component';
@@ -46,7 +46,7 @@ import { RolesModalComponent } from './modals/roles-modal/roles-modal.component'
     TestErrorComponent,
     NotFoundComponent,
     ServerErrorComponent,
-    MemberCardComponent, 
+    MemberCardComponent,
     MemberEditComponent,
     PhotoEditorComponent,
     TextInputComponent,
@@ -57,7 +57,7 @@ import { RolesModalComponent } from './modals/roles-modal/roles-modal.component'
     HasRoleDirective,
     UserManagementComponent,
     PhotoManagementComponent,
-    RolesModalComponent
+    RolesModalComponent,
   ],
   imports: [
     BrowserAnimationsModule,
@@ -66,13 +66,13 @@ import { RolesModalComponent } from './modals/roles-modal/roles-modal.component'
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

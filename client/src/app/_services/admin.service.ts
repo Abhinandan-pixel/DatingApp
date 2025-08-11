@@ -4,12 +4,12 @@ import { environment } from 'src/environments/environment';
 import { User } from '../_models/user';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AdminService {
   baseUrl = environment.apiUrl;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getUsersWithRoles() {
     return this.http.get<User[]>(this.baseUrl + 'admin/users-with-roles');

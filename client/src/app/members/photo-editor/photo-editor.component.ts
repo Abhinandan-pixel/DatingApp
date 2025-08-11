@@ -11,7 +11,7 @@ import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-photo-editor',
   templateUrl: './photo-editor.component.html',
-  styleUrls: ['./photo-editor.component.css']
+  styleUrls: ['./photo-editor.component.css'],
 })
 export class PhotoEditorComponent implements OnInit {
   @Input() member: Member | undefined;
@@ -19,23 +19,25 @@ export class PhotoEditorComponent implements OnInit {
   hasBaseDropZoneOver = false;
   baseUrl = environment.apiUrl;
   user: User | undefined;
-  
-  constructor(private accountService: AccountService, private memberService: MembersService) {
-    this.accountService.currentUser$.pipe(
-      take(1)
-    ).subscribe({
-      next: user => {
-        if(user) this.user = user;
-      }
+
+  constructor(
+    private accountService: AccountService,
+    private memberService: MembersService,
+  ) {
+    this.accountService.currentUser$.pipe(take(1)).subscribe({
+      next: (user) => {
+        if (user) this.user = user;
+      },
     });
   }
 
   ngOnInit(): void {
     //if (this.member) {
-      this.initializeUploader();
+    this.initializeUploader();
     //}
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   fileOverBase(e: any): void {
     this.hasBaseDropZoneOver = e;
   }
@@ -47,12 +49,12 @@ export class PhotoEditorComponent implements OnInit {
           this.user.photoUrl = photo.url;
           this.accountService.setCurrentUser(this.user);
           this.member.photoUrl = photo.url;
-          this.member.photos.forEach(p => {
+          this.member.photos.forEach((p) => {
             if (p.isMain) p.isMain = false;
             if (p.id === photo.id) p.isMain = true;
           });
         }
-      }
+      },
     });
   }
 
@@ -60,9 +62,9 @@ export class PhotoEditorComponent implements OnInit {
     this.memberService.deletePhoto(photoId).subscribe({
       next: () => {
         if (this.member) {
-          this.member.photos = this.member.photos.filter(p => p.id !== photoId);
+          this.member.photos = this.member.photos.filter((p) => p.id !== photoId);
         }
-      }
+      },
     });
   }
 
@@ -81,7 +83,7 @@ export class PhotoEditorComponent implements OnInit {
       file.withCredentials = false;
     };
 
-    this.uploader.onSuccessItem = (item, response, status, headers) => {
+    this.uploader.onSuccessItem = (item, response) => {
       if (response) {
         const photo = JSON.parse(response);
         this.member?.photos.push(photo);
@@ -93,5 +95,4 @@ export class PhotoEditorComponent implements OnInit {
       }
     };
   }
-
 }

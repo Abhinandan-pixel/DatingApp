@@ -1,27 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import { AccountService } from '../_services/account.service';
-import { Observable, of } from 'rxjs';
-import { User } from '../_models/user';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.css']
+  styleUrls: ['./nav.component.css'],
 })
 export class NavComponent implements OnInit {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   model: any = {};
-  
-  constructor(public accountService: AccountService, private router: Router, private toastr: ToastrService) { }
 
-  ngOnInit(): void {
-   
-  }
+  constructor(
+    public accountService: AccountService,
+    private router: Router,
+    private toastr: ToastrService,
+  ) {}
+
+  ngOnInit(): void {}
 
   login() {
     this.accountService.login(this.model).subscribe({
-      next: response => {
+      next: () => {
         this.router.navigateByUrl('/members');
       },
     });
@@ -31,5 +32,4 @@ export class NavComponent implements OnInit {
     this.accountService.logout();
     this.router.navigateByUrl('/');
   }
-
 }

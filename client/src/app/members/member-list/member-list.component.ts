@@ -1,16 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, take } from 'rxjs';
 import { Member } from 'src/app/_models/member';
 import { Pagination } from 'src/app/_models/pagination';
-import { User } from 'src/app/_models/user';
 import { UserParams } from 'src/app/_models/userParams';
-import { AccountService } from 'src/app/_services/account.service';
 import { MembersService } from 'src/app/_services/members.service';
 
 @Component({
   selector: 'app-member-list',
   templateUrl: './member-list.component.html',
-  styleUrls: ['./member-list.component.css']
+  styleUrls: ['./member-list.component.css'],
 })
 export class MemberListComponent implements OnInit {
   // members$: Observable<Member[]> | undefined;
@@ -19,13 +16,11 @@ export class MemberListComponent implements OnInit {
   userParams: UserParams | null | undefined;
   genderList = [
     { value: 'Male', display: 'Males' },
-    { value: 'Female', display: 'Females' }
+    { value: 'Female', display: 'Females' },
   ];
 
   constructor(private memberService: MembersService) {
     this.userParams = this.memberService.getUserParams();
-
-
   }
 
   ngOnInit(): void {
@@ -37,17 +32,17 @@ export class MemberListComponent implements OnInit {
     if (this.userParams) {
       this.memberService.setUserParams(this.userParams);
       this.memberService.getMembers(this.userParams).subscribe({
-        next: response => {
+        next: (response) => {
           if (response.result && response.pagination) {
             this.members = response.result.flat();
             this.pagination = response.pagination;
           }
-        }
+        },
       });
     }
-
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   pageChanged(event: any) {
     if (this.userParams && event.page !== this.userParams.pageNumber) {
       this.userParams.pageNumber = event.page;
@@ -61,4 +56,3 @@ export class MemberListComponent implements OnInit {
     this.loadMembers();
   }
 }
-

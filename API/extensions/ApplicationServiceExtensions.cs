@@ -2,6 +2,7 @@ using API.Data;
 using API.helpers;
 using API.interfaces;
 using API.services;
+using API.SignalR;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.extensions
@@ -22,7 +23,9 @@ namespace API.extensions
             services.AddScoped<IPhotoService, PhotoService>();
             services.AddScoped<LogUserActivity>();
             services.AddScoped<ILikesRepository, LikesRepository>();
-            services.AddScoped<IMessageRepository, MessageRepository>(); 
+            services.AddScoped<IMessageRepository, MessageRepository>();
+            services.AddSignalR();
+            services.AddSingleton<PresenceTracker>(); // we want list to live until our application lives
             return services;
         }
     }

@@ -10,7 +10,7 @@ import { AccountService } from './account.service';
 import { getPaginatedResults, getPaginationHeaders } from './paginationHelper';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class MembersService {
   baseUrl = environment.apiUrl;
@@ -19,14 +19,17 @@ export class MembersService {
   userParams: UserParams | undefined;
   user: User | undefined;
 
-  constructor(private http: HttpClient, private accountService: AccountService) {
+  constructor(
+    private http: HttpClient,
+    private accountService: AccountService,
+  ) {
     this.accountService.currentUser$.pipe(take(1)).subscribe({
-      next: user => {
+      next: (user) => {
         if (user) {
           this.user = user;
           this.userParams = new UserParams(user);
         }
-      }
+      },
     });
   }
 
@@ -45,7 +48,7 @@ export class MembersService {
     }
     return null;
   }
-  
+
   getMembers(userParams: UserParams) {
     const cacheKey = Object.values(userParams).join('-');
     const cachedMembers = this.memberCache.get(cacheKey);
@@ -59,11 +62,10 @@ export class MembersService {
     params = params.append('orderBy', userParams.orderBy);
 
     return getPaginatedResults<Member[]>(this.baseUrl + 'users', params, this.http).pipe(
-      map(response => {
+      map((response) => {
         this.memberCache.set(cacheKey, response);
         return response;
-      })
-    );
+      }),);
   }
 
   getMember(username: string) {
@@ -89,7 +91,7 @@ export class MembersService {
   }
 
   addLike(username: string) {
-    return this.http.post(this.baseUrl + 'likes/' + username, {})
+    return this.http.post(this.baseUrl + 'likes/' + username, {});
   }
 
   getLikes(predicate: string, pageNumber: number, pageSize: number) {
@@ -97,5 +99,4 @@ export class MembersService {
     params = params.append('predicate', predicate);
     return getPaginatedResults<Member[]>(this.baseUrl + 'likes', params, this.http);
   }
-
 }

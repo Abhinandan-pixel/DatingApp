@@ -1,13 +1,13 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { AccountService } from '../_services/account.service';
-import { ToastrModule, ToastrService } from 'ngx-toastr';
-import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
   @Output() cancelRegister = new EventEmitter();
@@ -15,7 +15,12 @@ export class RegisterComponent implements OnInit {
   maxDate: Date = new Date();
   validationErrors: string[] = [];
 
-  constructor(private accountService: AccountService, private toastr: ToastrService, private fb: FormBuilder, private router: Router) { }
+  constructor(
+    private accountService: AccountService,
+    private toastr: ToastrService,
+    private fb: FormBuilder,
+    private router: Router,
+  ) {}
 
   ngOnInit(): void {
     this.initializeForm();
@@ -34,14 +39,14 @@ export class RegisterComponent implements OnInit {
       confirmPassword: ['', [Validators.required, this.matchValues('password')]],
     });
     this.registerForm.controls['password'].valueChanges.subscribe({
-      next: () => this.registerForm.controls['confirmPassword'].updateValueAndValidity()
+      next: () => this.registerForm.controls['confirmPassword'].updateValueAndValidity(),
     });
   }
 
   matchValues(matchTo: string): ValidatorFn {
     return (control: AbstractControl) => {
       return control.value === control.parent?.get(matchTo)?.value ? null : { notMatching: true };
-    }
+    };
   }
 
   register() {
@@ -49,12 +54,12 @@ export class RegisterComponent implements OnInit {
     const values = { ...this.registerForm.value, dateOfBirth: dob };
 
     this.accountService.register(values).subscribe({
-      next: (response) => {
+      next: () => {
         this.router.navigateByUrl('/members');
       },
       error: (error) => {
         this.validationErrors = error;
-      }
+      },
     });
   }
 
@@ -65,7 +70,8 @@ export class RegisterComponent implements OnInit {
   private getDateOnly(dob: string | undefined) {
     if (!dob) return;
     const date = new Date(dob);
-    return new Date(date.setMinutes(date.getMinutes() - date.getTimezoneOffset())).toISOString().slice(0, 10);
+    return new Date(date.setMinutes(date.getMinutes() - date.getTimezoneOffset()))
+      .toISOString()
+      .slice(0, 10);
   }
-
 }

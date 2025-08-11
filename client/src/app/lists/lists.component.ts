@@ -6,16 +6,16 @@ import { Pagination } from '../_models/pagination';
 @Component({
   selector: 'app-lists',
   templateUrl: './lists.component.html',
-  styleUrls: ['./lists.component.css']
+  styleUrls: ['./lists.component.css'],
 })
 export class ListsComponent implements OnInit {
   members: Member[] | undefined;
   predicate = 'liked';
   pageNumber = 1;
   pageSize = 5;
-  pagination: Pagination | undefined
+  pagination: Pagination | undefined;
 
-  constructor(private memberService: MembersService) { }
+  constructor(private memberService: MembersService) {}
 
   ngOnInit(): void {
     this.loadLikes();
@@ -23,11 +23,11 @@ export class ListsComponent implements OnInit {
 
   loadLikes() {
     this.memberService.getLikes(this.predicate, this.pageNumber, this.pageSize).subscribe({
-      next: response => {
+      next: (response) => {
         this.members = response.result;
         this.pagination = response.pagination;
-      }
-    })
+      },
+    });
   }
 
   pageChanged(event: any) {

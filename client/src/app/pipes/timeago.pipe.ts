@@ -3,7 +3,7 @@ import { format } from 'timeago.js';
 
 @Pipe({
   name: 'timeago',
-  pure: true
+  pure: true,
 })
 export class TimeAgoPipe implements PipeTransform {
   transform(value: Date | string | number): string {

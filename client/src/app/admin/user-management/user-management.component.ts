@@ -7,13 +7,16 @@ import { RolesModalComponent } from 'src/app/modals/roles-modal/roles-modal.comp
 @Component({
   selector: 'app-user-management',
   templateUrl: './user-management.component.html',
-  styleUrls: ['./user-management.component.css']
+  styleUrls: ['./user-management.component.css'],
 })
 export class UserManagementComponent implements OnInit {
   users: User[] = [];
   bsModalRef: BsModalRef<RolesModalComponent> = new BsModalRef<RolesModalComponent>();
 
-  constructor(private adminService: AdminService, private modalService: BsModalService) { }
+  constructor(
+    private adminService: AdminService,
+    private modalService: BsModalService,
+  ) {}
 
   ngOnInit(): void {
     this.getUsersWithRoles();
@@ -21,8 +24,8 @@ export class UserManagementComponent implements OnInit {
 
   getUsersWithRoles() {
     this.adminService.getUsersWithRoles().subscribe({
-      next: users => this.users = users,
-    })
+      next: (users) => (this.users = users),
+    });
   }
 
   openRolesModal(user: User) {
@@ -30,20 +33,20 @@ export class UserManagementComponent implements OnInit {
       class: 'modal-dialog-centered',
       initialState: {
         user,
-        roles: this.getRolesArray(user)
-      }
-    }
+        roles: this.getRolesArray(user),
+      },
+    };
     this.bsModalRef = this.modalService.show(RolesModalComponent, config);
     this.bsModalRef.content!.updateSelectedRoles.subscribe((values: any[]) => {
       const rolesToUpdate = {
-        roles: [...values.filter(el => el.checked === true).map(el => el.name)]
+        roles: [...values.filter((el) => el.checked === true).map((el) => el.name)],
       };
       if (rolesToUpdate) {
         this.adminService.updateUserRoles(user.username, rolesToUpdate.roles).subscribe(() => {
-          user.roles = [...rolesToUpdate.roles]
-        })
+          user.roles = [...rolesToUpdate.roles];
+        });
       }
-    })
+    });
   }
 
   private getRolesArray(user: any) {
@@ -52,10 +55,10 @@ export class UserManagementComponent implements OnInit {
     const availableRoles: any[] = [
       { name: 'Admin', value: 'Admin' },
       { name: 'Moderator', value: 'Moderator' },
-      { name: 'Member', value: 'Member' }
+      { name: 'Member', value: 'Member' },
     ];
 
-    availableRoles.forEach(role => {
+    availableRoles.forEach((role) => {
       let isMatch = false;
       for (const userRole of userRoles) {
         if (role.name === userRole) {
@@ -69,8 +72,7 @@ export class UserManagementComponent implements OnInit {
         role.checked = false;
         roles.push(role);
       }
-    })
+    });
     return roles;
   }
-
 }
