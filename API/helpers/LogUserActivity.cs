@@ -13,10 +13,10 @@ namespace API.helpers
             if (!resultContext.HttpContext.User.Identity.IsAuthenticated) return; //if user is not authenticated, exit
 
             var userId = resultContext.HttpContext.User.GetUserId();
-            var repo = resultContext.HttpContext.RequestServices.GetRequiredService<IUserRepository>();
-            var user = await repo.GetUserByIdAsync(userId);
+            var uow = resultContext.HttpContext.RequestServices.GetRequiredService<IUnitOfWork>();
+            var user = await uow.UserRepository.GetUserByIdAsync(userId);
             user.LastActive = DateTime.UtcNow; //update last active time
-            await repo.SaveAllAsync(); //save changes to the database
+            await uow.Completed(); //save changes to the database
         }
     }
 }
